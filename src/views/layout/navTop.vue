@@ -1,7 +1,7 @@
 <!-- 顶导 -->
 <template>
   <div class="navTop">
-    <Header :style="{position: 'fixed', width: '100%', top: '0px'}"></Header>
+    <Header :style="{position: 'fixed', width: '100%', top: '0px', height: '60px'}"></Header>
   </div>
 </template>
 

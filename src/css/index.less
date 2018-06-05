@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+ul,
+ol,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: @bg-color-base;
+  font-family: @font-family-base !important;
+}
+
+a {
+  color: @anchor-color-base;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* 谷歌输入框自动填充时黄色背景处理 */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #fff inset !important; /* 调整自动填充背景的颜色 */
+  -webkit-text-fill-color: #555 !important; /* 调整自动填充文字的颜色 */
+}
+
+// 去掉移动端点击的黑影
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+   /* For some Androids */
+} 

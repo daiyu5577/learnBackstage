@@ -1,6 +1,6 @@
 <!-- 主体 -->
 <template>
-  <div class="layout">
+  <div class="layout-nav">
       <navTop></navTop>
       <navSide></navSide>
   </div>
