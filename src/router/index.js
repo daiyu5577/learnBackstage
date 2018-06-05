@@ -11,7 +11,7 @@ export default new Router({
     {
       path: '/',
       name: 'layout',
-      component: _import('HelloWorld')
+      component: _import('layout/layout')
     }
   ]
 })
