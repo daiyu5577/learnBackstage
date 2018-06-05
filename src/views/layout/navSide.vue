@@ -1,31 +1,16 @@
 <template>
-    <div class="layout">
+    <div class="navSide">
         <Sider :style="{position: 'fixed', height: '100vh', left: 0, overflow: 'auto'}">
-            <Menu active-name="1-2" theme="dark" width="auto" :open-names="['1']">
-                <Submenu name="1">
+            <div class="menuicon">
+                <!-- 导航图标 -->
+            </div>
+            <Menu active-name="1-1" theme="dark" width="auto" :open-names="['1']">
+                <Submenu v-for="(item, index) in menuList" :name="item.name">
                     <template slot="title">
-                        <Icon type="ios-navigate"></Icon>
-                        Item 1
+                        <Icon :type="item.icon"></Icon>
+                        {{item.title}}
                     </template>
-                    <MenuItem name="1-1">Option 1</MenuItem>
-                    <MenuItem name="1-2">Option 2</MenuItem>
-                    <MenuItem name="1-3">Option 3</MenuItem>
-                </Submenu>
-                <Submenu name="2">
-                    <template slot="title">
-                        <Icon type="ios-keypad"></Icon>
-                        Item 2
-                    </template>
-                    <MenuItem name="2-1">Option 1</MenuItem>
-                    <MenuItem name="2-2">Option 2</MenuItem>
-                </Submenu>
-                <Submenu name="3">
-                    <template slot="title">
-                        <Icon type="ios-analytics"></Icon>
-                        Item 3
-                    </template>
-                    <MenuItem name="3-1">Option 1</MenuItem>
-                    <MenuItem name="3-2">Option 2</MenuItem>
+                    <MenuItem v-for="it in item.MenuItem" :name="it.name">{{it.title}}</MenuItem>
                 </Submenu>
             </Menu>
         </Sider>
@@ -33,16 +18,29 @@
 </template>
 <script>
 
+import menuList from "@/resource/menuList"
+
 export default {
-    components: {
+    data() {
+        return {
+            menuList
+        }
     }
 }
 </script>
-<style scoped>
-    .layout{
-        background: #f5f7f9;
-        position: relative;
-        border-radius: 4px;
-        overflow: hidden;
+<style lang="less">
+// 最外层盒子
+.navSide {
+
+    // 导航宽度
+    .ivu-layout-sider {
+        width: 20%;
     }
+    
+    // 侧导航的图标
+    .menuicon {
+    width: 100%;
+    height: 60px;
+  }
+}
 </style>
