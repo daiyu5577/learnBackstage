@@ -31,11 +31,6 @@ export default {
 <style lang="less">
 // 最外层盒子
 .navSide {
-
-    // 导航宽度
-    .ivu-layout-sider {
-        width: 20%;
-    }
     
     // 侧导航的图标
     .menuicon {

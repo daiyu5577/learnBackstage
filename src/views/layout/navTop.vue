@@ -6,7 +6,8 @@
     width: '100%',
     top: '0px',
     height: '60px',
-    padding: '0px 20px'
+    padding: '0px 20px',
+    paddingLeft: '220px'
     }">
     <!-- 路由位置展示 -->
       <Breadcrumb>
@@ -43,11 +44,9 @@ export default {
 <style lang='less'>
 // 最外层盒子
 .navTop {
-  padding-left: 200px;
 
   // 头部导航
   .ivu-layout-header{
-        width: 80%;
         min-width: 1000px;
         background: #fff;
         box-shadow: 0 1px 1px rgba(0,0,0,.1);
@@ -64,7 +63,7 @@ export default {
     // 用户信息
     .nav-user {
       float: right;
-      width: 350px;
+      overflow: hidden;
       height: 60px;
       padding-top: 10px;
 
