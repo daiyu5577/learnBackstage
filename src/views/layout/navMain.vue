@@ -1,7 +1,6 @@
 <!-- 主体内容 -->
 <template>
   <div class="navMain">
-    我是主体
     <router-view/>
   </div>
 </template>

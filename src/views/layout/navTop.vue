@@ -11,9 +11,7 @@
     }">
     <!-- 路由位置展示 -->
       <Breadcrumb>
-          <BreadcrumbItem>Home</BreadcrumbItem>
-          <BreadcrumbItem>Components</BreadcrumbItem>
-          <BreadcrumbItem>Layout</BreadcrumbItem>
+          <BreadcrumbItem v-for="it in path">{{it}}</BreadcrumbItem>
       </Breadcrumb>
       <!-- 用户头像、名字 -->
       <div class="nav-user">
@@ -36,7 +34,17 @@
 export default {
   data () {
     return {
+      path: []
     };
+  },
+  mounted() {
+    this.path = this.$route.meta.path
+  },
+  watch: {
+    // 面包屑的位置定位
+    '$route'(to, from) {
+      this.path = to.meta.path
+    }
   }
 }
 

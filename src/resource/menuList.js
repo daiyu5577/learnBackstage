@@ -7,12 +7,12 @@ export default [
       icon: "ios-navigate",
       MenuItem: [{
           title: '课程管理',
-          name: "1-1",
+          name: "courseManagement",
           icon: "ios-navigate",
         },
         {
           title: '课程上传',
-          name: "1-2",
+          name: "courseUploading",
           icon: "ios-navigate",
         }
       ]

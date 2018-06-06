@@ -3,8 +3,13 @@
         <Sider :style="{position: 'fixed', height: '100vh', left: 0, overflow: 'auto'}">
             <div class="menuicon">
                 <!-- 导航图标 -->
+                <img src="../../assets/images/nav/nav-side-logo.png" alt="">
             </div>
-            <Menu active-name="1-1" theme="dark" width="auto" :open-names="['1']">
+            <Menu active-name="courseManagement"
+                  theme="dark"
+                  width="auto"
+                  @on-select="handlerMenuSlect"
+                  :open-names="['1']">
                 <Submenu v-for="(item, index) in menuList" :name="item.name">
                     <template slot="title">
                         <Icon :type="item.icon"></Icon>
@@ -25,6 +30,11 @@ export default {
         return {
             menuList
         }
+    },
+    methods: {
+        handlerMenuSlect(name) {
+            this.$router.push({name})
+        }
     }
 }
 </script>
@@ -36,6 +46,15 @@ export default {
     .menuicon {
     width: 100%;
     height: 60px;
+    position: relative;
+
+    img {
+        height: 29px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
   }
 }
 </style>
