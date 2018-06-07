@@ -2,6 +2,7 @@
 <template>
   <div class="login">
       <div class="login-panel">
+          <img class="login-logo" src="../../assets/images/login/login-logo.png" alt="">
           <Form ref="formValidate" :rules="ruleValidate" :model="formItem" :label-width="40">
                 <div class="login-title">
                     <h3>登录</h3>
@@ -91,7 +92,7 @@ export default {
         min-width: 550px;
         background: #475061;
         position: relative;
-        background: url('../../assets/images/login/login-background.jpg') no-repeat center;
+        background: url('../../assets/images/login/login-background.png') no-repeat center;
         background-size:100% 99.9%;
 
         // 登录面板
@@ -101,16 +102,27 @@ export default {
             background-color: #fff;
             padding: 0px 30px;
             position: absolute;
-            top: 30%;
-            right: 15%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            // logo
+            .login-logo {
+                position: absolute;
+                width: 280px;
+                height: 40px;
+                top: -55px;
+                left: 50%;
+                transform: translate(-50%,0)
+            }
 
             // form表单
             .ivu-form {
-
                 // 登录标题
                 .login-title {
                     height: 60px;
-                    font: 15px '微软雅黑';
+                    font-size: 16px;
+                    color: #484848;
                     line-height: 60px;
                     text-align: center;
                     border-bottom: 1px solid #cccccc;

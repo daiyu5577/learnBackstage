@@ -59,23 +59,6 @@
                 <use :xlink:href="fileSvg('1.pdf')"></use>
               </svg>
             </div>
-
-            <!-- 资料信息 -->
-            <div class="panel-info">
-              <!-- 名称 -->
-              <div class="panel-info-title">商务英语</div>
-              <!-- 大小-->
-              <div class="panel-info-size">66M</div>
-            </div>
-          </div>
-
-          <div class="item-panel">
-            <!-- 资料图标 -->
-            <div class="panel-icon">
-              <svg class="icon" aria-hidden="true">
-                <use :xlink:href="fileSvg('1.pdf')"></use>
-              </svg>
-            </div>
             <!-- 资料信息 -->
             <div class="panel-info">
               <!-- 名称 -->
@@ -271,7 +254,15 @@ export default {
   // 资料
   .course-data {
     border-radius: 6px;
-    overflow: auto;
+    /* 闭合浮动 */
+    &:before,
+    &:after {
+      content: " ";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
 
     // 列表项面板
     .item-panel {
