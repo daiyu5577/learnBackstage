@@ -8,6 +8,12 @@ const _import = file => require(`@/views/${file}`).default
 
 export default new Router({
   routes: [
+    // 登录页面
+    {
+      path: '/login',
+      name: 'login',
+      component: _import('login/login')
+    },
     // 初始页面
     {
       path: '/',

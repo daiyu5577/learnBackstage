@@ -16,8 +16,8 @@ export default {
 </script>
 <style lang='less' scoped>
 .navMain {
-  padding-left: 200px;
-  padding-top: 60px;
+  padding-left: 230px;
+  padding-top: 90px;
   width: 100%;
   height: 100%;
   background-color: aqua;

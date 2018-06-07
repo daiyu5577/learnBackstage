@@ -11,18 +11,18 @@
     }">
     <!-- 路由位置展示 -->
       <Breadcrumb>
-          <BreadcrumbItem v-for="it in path">{{it}}</BreadcrumbItem>
+          <BreadcrumbItem v-for="(it, index) in path" :key="index">{{it}}</BreadcrumbItem>
       </Breadcrumb>
       <!-- 用户头像、名字 -->
       <div class="nav-user">
         <img src="../../assets/images/nav/nav-top-head.jpg" alt="">
-        <Dropdown trigger="click" style="margin-left: 20px">
+        <Dropdown @on-click="handlerExit" trigger="click" style="margin-left: 20px">
             <a href="javascript:void(0)">
                 黑崎一护
                 <Icon type="arrow-down-b"></Icon>
             </a>
             <DropdownMenu slot="list">
-                <DropdownItem>退出</DropdownItem>
+                <DropdownItem name='exit'>退出</DropdownItem>
             </DropdownMenu>
         </Dropdown>
       </div>
@@ -40,8 +40,18 @@ export default {
   mounted() {
     this.path = this.$route.meta.path
   },
+  methods: {
+    // 退出
+    handlerExit(name) {
+      switch (name) {
+        case 'exit':
+          this.$router.push({name:'login'})
+        break;
+      }
+    }
+  },
   watch: {
-    // 面包屑的位置定位
+    // 面包屑显示位置定位
     '$route'(to, from) {
       this.path = to.meta.path
     }

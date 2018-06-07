@@ -10,12 +10,12 @@
                   width="auto"
                   @on-select="handlerMenuSlect"
                   :open-names="['1']">
-                <Submenu v-for="(item, index) in menuList" :name="item.name">
+                <Submenu v-for="(item, index) in menuList" :name="item.name" :key="index">
                     <template slot="title">
                         <Icon :type="item.icon"></Icon>
                         {{item.title}}
                     </template>
-                    <MenuItem v-for="it in item.MenuItem" :name="it.name">{{it.title}}</MenuItem>
+                    <MenuItem v-for="(it, index) in item.MenuItem" :name="it.name" :key="index">{{it.title}}</MenuItem>
                 </Submenu>
             </Menu>
         </Sider>
@@ -34,6 +34,9 @@ export default {
     methods: {
         handlerMenuSlect(name) {
             this.$router.push({name})
+            //todo 新开窗口
+            console.log(this.$router.resolve({name}))
+            //  window.open(this.$router.resolve({name}))
         }
     }
 }

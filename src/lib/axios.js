@@ -25,7 +25,7 @@ axios.interceptors.request.use(
 axios.interceptors.response.use(
   function (response) {
     if (response.data.code === 403) {
-      // router.push({name: "login"});
+      router.push({name: "login"});
       return;
     }
     // Do something with response data

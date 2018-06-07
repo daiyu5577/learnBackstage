@@ -12,7 +12,6 @@ switch (nodeEnv) {
     break;
   case "production":
     ip = "http://learn.sunlands.site/v1";
-    //ip = "http://localhost:8082";
     break;
   default:
     ip = "0.0.0.0";
