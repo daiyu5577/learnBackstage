@@ -44,6 +44,11 @@ export default {
 <style lang="less">
 // 最外层盒子
 .navSide {
+
+    // 导航
+    .ivu-layout-sider {
+        z-index: 9999;
+    }
     
     // 侧导航的图标
     .menuicon {

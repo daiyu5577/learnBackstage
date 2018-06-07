@@ -65,7 +65,7 @@ export default {
 
   // 头部导航
   .ivu-layout-header{
-        min-width: 1000px;
+        min-width: 600px;
         background: #fff;
         box-shadow: 0 1px 1px rgba(0,0,0,.1);
     }

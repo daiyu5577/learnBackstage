@@ -18,8 +18,10 @@ export default {
 .navMain {
   padding-left: 230px;
   padding-top: 90px;
+  padding: 90px 30px 0px 240px;
   width: 100%;
-  height: 100%;
-  background-color: aqua;
+  min-height: 100%;
+  min-width: 1480px;
+  background-color: #eeeeee;
 }
 </style>
